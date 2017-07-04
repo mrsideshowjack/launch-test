@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Launch
+published: true
 order: 1
 ---
 

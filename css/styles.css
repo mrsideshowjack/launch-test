@@ -58,16 +58,6 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.blur-up {
-  -webkit-filter: blur(50px);
-  filter: blur(50px);
-  transition: filter 600ms, -webkit-filter 600ms;
-}
-
-.blur-up.lazyloaded {
-  -webkit-filter: blur(0);
-  filter: blur(0);
-}
 .btn {
     margin: 50px 0 0 0;
     display: inline;
@@ -98,6 +88,7 @@ min-height: 25px;
 /* max-width: 300px; */
 max-height: 64px;
 padding: 2rem;
+display: block;
 }
 .navbar nav{
   display: flex;
@@ -116,12 +107,22 @@ border: 1px solid #fff;
 }
 .navbar nav .navbar-nav-item:hover,
 .navbar nav .navbar-nav-item:focus{
-  border-color: var(--launch-violet, #3A397B);
+  border-color: var(--launch-violet, #3A397B) !important;
   color: var(--launch-violet, #3A397B);
 }
 .navbar nav .navbar-nav-item.active{
+  border-color: var(--launch-blue, #00AACF);
   background-color: var(--launch-blue, #00AACF);
   color: #fff;
+}
+.blur-up {
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  transition: filter 600ms, -webkit-filter 600ms;
+}
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
 .hero-img{
   background: var(--launch-violet, #3A397B);
@@ -167,14 +168,22 @@ border: 1px solid #fff;
 .page .page-content{
     width: 100vw;
     padding: 5rem 0rem;
+    font-size: 1.3rem;
     box-shadow: inset 0 0 20px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .page .page-content> p,
 .page .page-content ul,
 .page .page-content article{
   max-width: 45vw;
-  margin: 0rem auto 1rem auto;
+  /*margin: 0rem auto 1rem auto;*/
   font-size: 1.3rem;
+}
+.page .page-content a{
+  word-break: break-word;
 }
 .page .page-content .page-title{
   text-align: center;
@@ -185,11 +194,12 @@ border: 1px solid #fff;
 .page .page-content .twitter-tweet,
 .page .page-content .twitter-timeline{
   display: block !important;
-  max-width: 100%;
+  max-width: 90%;
   margin: 1rem auto;
 }
 .page .page-content .partners{
   text-align: center;
+  width: 100%;
 }
 .page .page-content .partners .partners-imgs{
   max-width: 70%;
@@ -207,15 +217,35 @@ border: 1px solid #fff;
 .page .page-content .partners .partners-imgs img{
   max-width: 200px;
   height: auto;
+  padding: 1rem;
 }
-
+.funding-sources{
+    max-width: 50vw;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin: 2rem auto;
+}
+.funding-sources div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.funding-sources div img{
+  max-width: 250px;
+  max-height: 150px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #fff;
+}
 .contact .contact-form {
     max-width: 80vw;
     margin: auto;
 }
 
 .contact .input {
-    width: 47%;
+    width: calc(95% /2 - 16px);
     float: left;
 }
 
@@ -232,19 +262,19 @@ border: 1px solid #fff;
 
 .contact .input input {
     display: block;
-    width: 100%;
+    width: 95%;
     background: rgba(0, 170, 207, 0.5);
     border: 5px solid rgba(255,255,255,0.5);
-    padding: 10px 15px;
+    padding: 10px 5px;
 }
 
 .contact .message textarea {
     display: block;
-    width: 100%;
+    width: 95%;
     height: 200px;
     background: rgba(0, 170, 207, 0.5);
     border: 5px solid rgba(255,255,255,0.5);
-    padding: 10px 15px;
+    padding: 10px 5px;
     resize: vertical;
 }
 
@@ -308,9 +338,14 @@ footer{
 footer .column{
   display: flex;
   flex-direction: column;
-  text-align: center;
+  
   padding: 0px 2rem;
 }
 footer .column a{
   color: #fff;
+  word-break: break-word;
+}
+footer .column a .fa,
+footer .column h3{
+  text-align: center;
 }
