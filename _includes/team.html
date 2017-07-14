@@ -4,7 +4,7 @@
 
 	 {% for entry in site.data.team %}
 	 	<article class="team-member">
-		 <img src="{{ entry.avatar }}">
+		 <img src="{{ site.url }}/imgs/team/{{ entry.avatar }}">
 		 <h3 class="name">{{ entry.name }}</h3>
 		 <p class="role">{{ entry.role }}</p>
 		 <p class="bio">{{ entry.bio }}</p>
